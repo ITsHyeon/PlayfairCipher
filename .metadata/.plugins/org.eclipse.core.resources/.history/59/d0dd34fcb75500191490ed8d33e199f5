@@ -1,0 +1,69 @@
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class EventFireGui extends JFrame{
+	public EventFireGui() {
+		super("Event Firer");
+		
+		setBounds(100, 100, 500, 500);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container contentPane = this.getContentPane();
+		JPanel pane = new JPanel();
+		// 가상키
+		JTextField tfVirtualKey = new JTextField(15);
+		JLabel lbVirtualKey = new JLabel("가상키 : ");
+		
+		//평문
+		JTextField tfPlainText = new JTextField(15);
+		JLabel lbPlainText = new JLabel("평문 : ");
+		
+		// 암호판
+		String title[] = {"1", "2", "3", "4", "5"};
+		String key[][] = new String[5][5];
+		JTable tableKey = new JTable(key, title);
+		JScrollPane scrollpane = new JScrollPane(tableKey);
+		
+		// 암호문
+		JTextField tfPw = new JTextField(15);
+		JLabel lbPw = new JLabel("암호문 : ");
+		
+		// 복호문
+		JTextField tfDecryption = new JTextField(15);
+		JLabel lbDecryption = new JLabel("복호문 : ");
+		
+
+		// 암호판 설정
+		tableKey.getTableHeader().setReorderingAllowed(false); // 이동 불가
+		tableKey.getTableHeader().setResizingAllowed(false); // 크기 조절 불가
+		
+		// 가상키 추가
+		pane.add(lbVirtualKey);
+		pane.add(tfVirtualKey);
+		
+		// 평문 추가
+		pane.add(lbPlainText);
+		pane.add(tfPlainText);
+		
+		// 암호판 추가
+		pane.add(scrollpane);
+		
+		// 암호문 추가
+		pane.add(lbPw);
+		pane.add(tfPw);
+		
+		// 복호문 추가
+		pane.add(lbDecryption);
+		pane.add(tfDecryption);
+		contentPane.add(pane);
+		setVisible(true);
+		
+	}
+}

@@ -1,0 +1,43 @@
+import java.awt.Container;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class EventFireGui extends JFrame{
+	public EventFireGui() {
+		super("Event Firer");
+		
+		setBounds(100, 100, 500, 500);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		Container contentPane = this.getContentPane();
+		JPanel pane = new JPanel();
+		// 가상키
+		JTextField tfVirtualKey = new JTextField(15);
+		JLabel lbVirtualKey = new JLabel("가상키 : ");
+		
+		//평문
+		JTextField tfPlainText = new JTextField(15);
+		JLabel lbPlainText = new JLabel("평문 : ");
+		
+		pane.add(lbVirtualKey);
+		pane.add(tfVirtualKey);
+		lbVirtualKey.setText("<html>ddd<br></html>);
+		pane.add(lbPlainText);
+		pane.add(tfPlainText);
+		contentPane.add(pane);
+		
+		
+		
+		
+		
+		
+		
+		
+		setVisible(true);
+		
+	}
+}
