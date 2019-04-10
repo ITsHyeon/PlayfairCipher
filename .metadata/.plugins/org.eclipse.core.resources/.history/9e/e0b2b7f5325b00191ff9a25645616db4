@@ -281,15 +281,15 @@ public class main {
             }
          }
          
-         if(x1==x2) { // 행이 같은 경우 각각 바로 아래열 대입
+         if(x1==x2) {
             tmpArr[0] = (char) key[x1][(y1+1)%5];
             tmpArr[1] = (char) key[x2][(y2+1)%5];
          }
-         else if(y1==y2) { // 열이 같은 경우 각각 바로 옆 열 대입
+         else if(y1==y2) {
             tmpArr[0] = (char) key[(x1+1)%5][y1];
             tmpArr[1] = (char) key[(x2+1)%5][y2];
          }
-         else { // 행, 열 다른 경우 각각 대각선에 있는 곳
+         else {
             tmpArr[0] = (char) key[x2][y1];
             tmpArr[1] = (char) key[x1][y2];
          }
@@ -304,11 +304,11 @@ public class main {
    }
    
    public static void setBord() {
-      String keyForSet = ""; // 중복된 문자가 제거된 문자열을 저장할 문자열
-      boolean flag = false; // 문자 중복을 체크하기 위한 flag 변수
-      int lengthcount = 0; // key에 keyForSet을 넣기 위한 count변수
+      String keyForSet = "";
+      boolean flag = false;
+      int lengthcount = 0;
       
-      virtualkey += "abcdefghijklmnopqrstuvwxyz"; // 키에 모든 알파벳을 추가
+      virtualkey += "abcdefghijklmnopqrstuvwxyz";
       
       // 중복처리
       for (int i = 0; i < virtualkey.length(); i++) {
